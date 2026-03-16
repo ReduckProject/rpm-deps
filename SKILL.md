@@ -1,0 +1,48 @@
+# RPM Package Manager Skill
+
+Two RPM package management tools for Chinese Linux distributions.
+
+## Scripts
+
+| Script | Distribution | Output Dir |
+|--------|-------------|------------|
+| `oe_rpm.py` | openEuler (SP1-SP4) | `oe-rpms/` |
+| `ky_rpm.py` | Kylin V10 (SP1-SP3) | `ky-rpms/` |
+
+## Commands
+
+```bash
+# Update metadata
+python oe_rpm.py --update                    # x86_64 (default)
+python oe_rpm.py --arch=aarch64 --update     # aarch64
+
+# Download packages (fuzzy match)
+python oe_rpm.py --download=zlib             # search & download
+python oe_rpm.py --download=zlib -y          # auto-confirm (>10 packages)
+python oe_rpm.py --download=zlib --update    # update metadata first
+```
+
+Replace `oe_rpm.py` with `ky_rpm.py` for Kylin.
+
+## Arguments
+
+- `--arch ARCH` - Architecture: `x86_64` (default) or `aarch64`
+- `--update` - Fetch latest package metadata
+- `--download KEYWORD` - Fuzzy search and download
+- `-y` - Auto-confirm (required in non-interactive mode)
+
+## Important
+
+**If metadata file is older than 1 day, run `--update` before `--download`.**
+
+## Metadata File
+
+Location: `{output-dir}/{arch}_META.txt`
+
+First 4 lines contain metadata info (check line 3 for update time):
+```
+# 麒麟V10 软件包元数据 / # openEuler 软件包元数据
+# 架构: x86_64
+# 更新时间: 2026-03-16T10:30:00
+# 总包数: 16046
+```
