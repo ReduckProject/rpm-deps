@@ -42,7 +42,7 @@ EPOL_TYPES = ["main", "update"]  # EPOL 有特殊的子目录结构
 DEFAULT_ARCH = "x86_64"
 BASE_URL = "https://repo.openeuler.org"
 MAX_RETRIES = 3
-TIMEOUT = 30  # 秒
+TIMEOUT = 100  # 秒
 
 # 目录配置
 RPMS_DIR = "oe-rpms"

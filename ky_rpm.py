@@ -37,7 +37,7 @@ REPO_TYPES = ["base", "updates", "addons"]
 DEFAULT_ARCH = "x86_64"
 BASE_URL = "https://update.cs2c.com.cn/NS/V10"
 MAX_RETRIES = 3
-TIMEOUT = 30  # 秒
+TIMEOUT = 100  # 秒
 
 # 目录配置
 RPMS_DIR = "ky-rpms"
