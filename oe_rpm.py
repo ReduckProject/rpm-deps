@@ -40,7 +40,8 @@ REPO_TYPES = ["OS", "everything", "update"]
 EPOL_TYPES = ["main", "update"]  # EPOL 有特殊的子目录结构
 # DEFAULT_ARCH = "aarch64"
 DEFAULT_ARCH = "x86_64"
-BASE_URL = "https://repo.openeuler.org"
+# BASE_URL = "https://repo.openeuler.org"
+BASE_URL = "https://mirrors.huaweicloud.com/openeuler"
 MAX_RETRIES = 3
 TIMEOUT = 100  # 秒
 
